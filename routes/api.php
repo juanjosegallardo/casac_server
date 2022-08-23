@@ -18,6 +18,7 @@ use App\Http\Controllers\ClienteController;
 */
 Route::resource("/productos", ProductoController::class);
 Route::resource("/clientes", ClienteController::class);
+Route::get("/codigos/{codigo}/productos", [ProductoController::class, "cargarPorCodigo"]);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

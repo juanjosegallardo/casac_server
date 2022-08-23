@@ -96,4 +96,13 @@ class ProductoController extends Controller
         $producto=Producto::findOrFail($id);
         $producto->delete();
     }
+
+    public function cargarPorCodigo($codigo)
+    {
+        $producto = Producto::where("codigo", "=", $codigo)->first();
+        if($producto)
+            return $producto;
+        return response()->json(["mensaje"=>"No se encuetra el producto"], 404);
+
+    }
 }
