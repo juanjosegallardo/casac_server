@@ -11,4 +11,9 @@ class Producto extends Model
     use HasFactory;
     use SoftDeletes;
     protected $attributes =["cantidad"=>0];
+
+    protected $casts = [
+        'precio_compra' => 'double',
+        'precio_venta' => 'double'
+    ];
 }
