@@ -3,18 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Cliente;
 
-class ClienteController extends Controller
+class VentaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        return Cliente::busqueda($request->busqueda)->get();
+        //
     }
 
     /**
@@ -35,13 +34,7 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        $cliente = new Cliente();
-        $cliente->nombre = $request->nombre;
-        $cliente->direccion = $request->direccion;
-        $cliente->telefono_1= $request->telefono_1;
-        $cliente->telefono_2= $request->telefono_2;
-        $cliente->referencia= $request->referencia;
-        $cliente->save();
+        //
     }
 
     /**
@@ -52,7 +45,7 @@ class ClienteController extends Controller
      */
     public function show($id)
     {
-        return Cliente::findOrFail($id);
+        //
     }
 
     /**
@@ -75,13 +68,7 @@ class ClienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cliente = Cliente::findOrFail($id);
-        $cliente->nombre = $request->nombre;
-        $cliente->direccion = $request->direccion;
-        $cliente->telefono_1= $request->telefono_1;
-        $cliente->telefono_2= $request->telefono_2;
-        $cliente->referencia= $request->referencia;
-        $cliente->update();
+        //
     }
 
     /**
@@ -92,6 +79,6 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        Cliente::findOrFail($id)->delete();
+        //
     }
 }

@@ -16,4 +16,12 @@ class Producto extends Model
         'precio_compra' => 'double',
         'precio_venta' => 'double'
     ];
+
+    public function scopeBusqueda($query, $busqueda)
+    {
+        if($busqueda)
+        {
+            $query->where("descripcion", "like", "%{$busqueda}%");
+        }
+    }
 }

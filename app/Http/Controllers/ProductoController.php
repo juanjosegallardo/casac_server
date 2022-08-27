@@ -13,9 +13,9 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return Producto::all();
+        return Producto::busqueda($request->busqueda)->get();
     }
 
     /**
